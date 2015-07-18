@@ -1,0 +1,18 @@
+@import "media-queries";
+@import "fonts";
+
+body {
+  background: #EEE;
+}
+
+.space-showcase {
+  width: 100%;
+
+  @media #{$large-up} {
+    height: 20vh;  
+  }
+}
+
+.padded {
+  padding: 40px;
+}
