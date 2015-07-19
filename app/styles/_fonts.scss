@@ -16,6 +16,16 @@ $font-text: "Ubuntu";
   font-weight: bold;
 } 
 
+.text-match-pct {
+  font-family: $font-text !important;
+  font-size: 64px !important;
+}
+
+.text-match {
+  @extend .text;
+  font-size: 24px;
+}
+
 .text {
   font-family: $font-text !important;
 }
