@@ -1,12 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Adamina);
 @import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,300light|Monsterrat:400|Oswald:300,400|Bree+Serif|Merriweather|Vollkorn');
 @import url(http://fonts.googleapis.com/css?family=Vollkorn);
+@import url(http://fonts.googleapis.com/css?family=Muli);
 @import url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
 
+$font-title: "Muli";
 
-$font-logo: 'Adamina', serif;
-$font-sublogo: 'Lato', sans-serif;
-$font-menu-item: 'Vollkorn', serif;
+.title {
+  font-family: $font-title !important;
+  font-size: 84px !important;
+} 
 
 $color-topaz: #66CCAA;
 $color-topaz-gold: #CC7A00;
