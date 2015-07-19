@@ -27,6 +27,14 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/list', {
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl',
+      })
+      .when('/essay', {
+        templateUrl: 'views/essay.html',
+        controller: 'EssayCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

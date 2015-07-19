@@ -8,6 +8,10 @@ body {
   background: #EEE;
 }
 
+.essay-input {
+  max-width: 600px;
+}
+
 .my-button {
   font-family: $font-title !important;
   font-size: 24px !important;
@@ -17,6 +21,7 @@ body {
   width: 100%;
   border-top: 1px solid $color-border;
   border-bottom: 1px solid $color-border;
+  padding: 80px;
 }
 
 .bg-white {

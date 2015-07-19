@@ -1,13 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Adamina);
 @import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,300light|Monsterrat:400|Oswald:300,400|Bree+Serif|Merriweather|Vollkorn');
 @import url(http://fonts.googleapis.com/css?family=Vollkorn);
-@import url(http://fonts.googleapis.com/css?family=Muli:400|Ubuntu:200,300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Muli:300,400|Ubuntu:200,300);
 
 @import url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
 
 
 $font-title: "Muli";
 $font-text: "Ubuntu";
+$font-readable: "Open Sans";
 
 .title {
   font-family: $font-title !important;
@@ -21,6 +22,12 @@ $font-text: "Ubuntu";
   font-size: 64px !important;
 }
 
+.text-description {
+  font-family: $font-text !important;
+  font-size: 34px !important;
+  font-weight: 300;
+}
+
 .text-match {
   @extend .text;
   font-size: 24px;
@@ -28,6 +35,11 @@ $font-text: "Ubuntu";
 
 .text {
   font-family: $font-text !important;
+}
+
+.readable {
+  font-family: $font-readable !important;
+  font-size: 24px;
 }
 
 .text-mini {
