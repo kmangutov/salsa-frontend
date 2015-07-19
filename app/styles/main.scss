@@ -5,14 +5,39 @@ body {
   background: #EEE;
 }
 
+.my-button {
+  font-family: $font-title !important;
+  font-size: 24px !important;
+}
+
+.splash {
+  background-image: url("../images/splash.jpg") !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.center {
+  margin: 0 auto !important;
+}
+
 .space-showcase {
   width: 100%;
 
   @media #{$large-up} {
-    height: 20vh;  
+    height: 10vh;  
   }
 }
 
 .padded {
   padding: 40px;
+}
+
+.rounded {
+  border-radius: 25px;
+  border: 1px solid #BBB;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px;
 }

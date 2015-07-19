@@ -1,15 +1,40 @@
 @import url(http://fonts.googleapis.com/css?family=Adamina);
 @import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,300light|Monsterrat:400|Oswald:300,400|Bree+Serif|Merriweather|Vollkorn');
 @import url(http://fonts.googleapis.com/css?family=Vollkorn);
-@import url(http://fonts.googleapis.com/css?family=Muli);
+@import url(http://fonts.googleapis.com/css?family=Muli:400|Ubuntu:200,300);
+
 @import url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
 
+
 $font-title: "Muli";
+$font-text: "Ubuntu";
 
 .title {
   font-family: $font-title !important;
   font-size: 84px !important;
+  letter-spacing: -6px;
+  font-weight: bold;
 } 
+
+.text {
+  font-family: $font-text !important;
+}
+
+.text-mini {
+  @extend .text;
+  font-size: 8px !important;
+  text-align: right !important;
+}
+
+.sub-title {
+  @extend .text;
+  font-size: 32px !important;
+}
+
+.title-small {
+  font-family: $font-title !important;
+  font-size: 32px !important;
+}
 
 $color-topaz: #66CCAA;
 $color-topaz-gold: #CC7A00;
