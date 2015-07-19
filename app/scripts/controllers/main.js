@@ -35,6 +35,8 @@ angular.module('topazApp')
 
           console.log("data structure: " + JSON.stringify(structure));
           $location.path("/essay");
+
+          //TODO: call to service
         });
       });
     }

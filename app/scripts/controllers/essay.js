@@ -10,7 +10,13 @@
 
 
 angular.module('topazApp')
-  .controller('EssayCtrl', function ($scope, Facebook) {    
+  .controller('EssayCtrl', function ($scope, $location, Facebook) {    
+    $scope.submitEssay = function() {
+      var text = $scope.essay;
+      $scope.essay = text + " " + text;
 
+      $location.path("/list");
 
+      //TODO: call to service
+    }
   });
