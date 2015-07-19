@@ -4,6 +4,10 @@ $color-border: #DDD;
 @import "media-queries";
 @import "fonts";
 
+.bottom-empahsis {
+  margin-bottom: 10px !important;
+}
+
 body {
   background: #EEE;
 }

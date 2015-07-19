@@ -27,14 +27,20 @@ angular.module('topazApp')
           console.log(data);
           structure['posts'] = [];
           data.forEach(function(post) {
-            console.log("###" + post.message);
             if(post.message) {
               structure['posts'].push(post.message);
             }
           });
 
-          console.log("data structure: " + JSON.stringify(structure));
-          $location.path("/essay");
+          Facebook.api('/me/picture?height=200&width=200', function(response) {
+            console.log(response);
+            structure['photo'] = response.data.url;
+
+          
+            console.log("data structure: " + JSON.stringify(structure));
+            $location.path("/essay");
+  
+          });
 
           //TODO: call to service
         });

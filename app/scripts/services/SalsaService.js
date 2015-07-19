@@ -9,8 +9,15 @@
  */
 angular.module('topazApp')
   .service('SalsaService', ['$http', function ($http) {
-    var baseUrl = 'http://localhost:3000/api';
+    var baseUrl = 'http://localhost:3000/';
+    var id;
 
+    this.postFbData = function(data, id) {
+      var url = baseUrl + "/fbdata";
+      
+    }
+
+/*
     this.get = function(portfolio_id) {
       return $http.get(baseUrl + '/portfolio/' + portfolio_id + '/asset');
     }
@@ -34,6 +41,6 @@ angular.module('topazApp')
 
     this.downvote = function(portfolio_id, down_data) {
       return $http.post(baseUrl + '/portfolio/' + portfolio_id + '/downvote', down_data);
-    }
+    }*/
 
   }]);
