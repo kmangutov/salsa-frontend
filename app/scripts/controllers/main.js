@@ -10,7 +10,7 @@
 
 
 angular.module('topazApp')
-  .controller('MainCtrl', function ($scope, Facebook) {    
+  .controller('MainCtrl', function ($scope, $location, Facebook) {    
 
     var loadFb = function() {
 
@@ -34,6 +34,9 @@ angular.module('topazApp')
           });
 
           console.log("data structure: " + JSON.stringify(structure));
+          $location.path("/essay");
+
+          //TODO: call to service
         });
       });
     }
