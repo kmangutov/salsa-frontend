@@ -18,8 +18,9 @@ angular.module('topazApp')
       return $http.post(url, data);
     }
 
-    this.postRedditData = function(data) {
+    this.postEssayData = function(data) {
       var url = baseUrl + "/reddit";
+      data['id'] = myId;
       return $http.post(url, data);
     }
 

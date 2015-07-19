@@ -17,7 +17,7 @@ angular.module('topazApp')
       var data = {
         name: text
       };
-      SalsaService.postRedditData(data).success(function(response) {
+      SalsaService.postEssayData(data).success(function(response) {
         $location.path("/list");
       }).error(function(response) {
         console.log("error: " + response);
