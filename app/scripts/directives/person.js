@@ -885,7 +885,9 @@ angular.module('topazApp')
         SalsaService.getPerson($scope.id).success(function(data) {
           console.log("in getPerson " + data);
           updateChart(data);
-        
+        })
+        .error(function (error) {
+          console.log("in error " + error);
         });
 
 
