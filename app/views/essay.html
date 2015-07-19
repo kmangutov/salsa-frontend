@@ -9,6 +9,8 @@
   
   <textarea type="text" ng-model="essay" rows="15"></textarea>
 
+  Remaining characters: {{ Math.max(0, 250 - essay.length )}}<br>
+
   <br>
-    <button type="button" class="my-button" data-ng-click="submitEssay()">Submit Sample</button>
+    <button ng-disabled="essay.length < 250" type="button" class="my-button" data-ng-click="submitEssay()">Submit Sample</button>
 </div>

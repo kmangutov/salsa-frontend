@@ -29,4 +29,18 @@ angular.module('topazApp')
       return $http.get(url);
     }
 
+    this.getPeople = function() {
+      var url = baseUrl + "/people";
+      return $http.get(url);
+    }
+
+    this.getCompare = function(idA, idB) {
+      var url = baseUrl + "/compare";
+      var data = {
+        a: idA,
+        b: idB
+      };
+      return $http.get(url, data);
+    }
+
   }]);
