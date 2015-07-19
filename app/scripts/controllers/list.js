@@ -12,8 +12,10 @@
 angular.module('topazApp')
   .controller('ListCtrl', function ($scope, $location, Facebook, SalsaService) {    
     
-      SalsaService.getMatchData().success(function(response) {
+      $scope.people = [];
+      SalsaService.getPeople().success(function(response) {
         console.log("GOT MATCH DATA: " + response);
+        $scope.people = response;
       }).error(function(response) {
         console.log("error: " + response);
       });
