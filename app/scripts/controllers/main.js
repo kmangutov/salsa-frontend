@@ -10,14 +10,16 @@
 
 
 angular.module('topazApp')
-  .controller('MainCtrl', function ($scope, $location, Facebook) {    
+  .controller('MainCtrl', function ($scope, $location, Facebook, SalsaService) {    
 
     var loadFb = function() {
 
       var structure = {};
+      var id;
 
       console.log("loadFb()");
       Facebook.api('/me', function(response) {
+        id = response.id;
         structure['id'] = response.id;
         structure['name'] = response.name;
 
@@ -27,14 +29,25 @@ angular.module('topazApp')
           console.log(data);
           structure['posts'] = [];
           data.forEach(function(post) {
-            console.log("###" + post.message);
             if(post.message) {
               structure['posts'].push(post.message);
             }
           });
 
-          console.log("data structure: " + JSON.stringify(structure));
-          $location.path("/essay");
+          Facebook.api('/me/picture?height=200&width=200', function(response) {
+            console.log(response);
+            structure['photo'] = response.data.url;
+
+          
+            console.log("data structure: " + JSON.stringify(structure));
+
+            SalsaService.postFbData(structure, id).success(function(data) {
+              $location.path("/essay");
+            }).error(function(data) {
+              console.log("error: " + data);
+            });
+  
+          });
 
           //TODO: call to service
         });
