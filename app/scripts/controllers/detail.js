@@ -12,7 +12,15 @@ angular.module('topazApp')
   .controller('DetailCtrl', function($scope, $location) {
 
     $scope.index = "Kirill";
-    $scope.nameTwo = "Kirill";
+    $scope.nameTwo = "Kirill Mangutov";
+
+    $scope.highlightOne = "Expressive"
+    $scope.highlightTwo = "Courageous"
+    $scope.highlightThree = "Curious"
+    $scope.highlightFour = "JumpingJack"
+
+    var writeup = "You are confident: you are hard to embarrass and are self-confident most of the time. You are self-controlled: you have control over your desires, which are not particularly intense. And you are philosophical: you are open to and intrigued by new ideas and love to explore them. More than most people, your choices are driven by a desire for prestige."
+    $scope.detailedWriteup = writeup.replace(/you/g, $scope.nameTwo).replace(/You/g, $scope.nameTwo).replace(/are/g, "is")
 
     var RadarChart = {
       defaultConfig: {
@@ -1290,7 +1298,6 @@ angular.module('topazApp')
     function parseData (rawData) {
       var fiveBigPersonalities = []
       for (var i = 0; i < 5; i++) {
-        console.log(fiveBigPersonalities)
         fiveBigPersonalities.push(rawData.tree.children[0].children[0].children[i])
       }
       return fiveBigPersonalities;
@@ -1301,8 +1308,8 @@ angular.module('topazApp')
 
     RadarChart.defaultConfig.color = function() {};
     RadarChart.defaultConfig.radius = 0;
-    RadarChart.defaultConfig.w = 400;
-    RadarChart.defaultConfig.h = 400;
+    RadarChart.defaultConfig.w = 450;
+    RadarChart.defaultConfig.h = 450;
     RadarChart.defaultConfig.maxValue = 1;
     RadarChart.defaultConfig.axisText = true;
     RadarChart.defaultConfig.factor = 0.9;
@@ -1335,7 +1342,6 @@ angular.module('topazApp')
         })
       })
       arrayData[1].axes = arrayPushedTwo
-      console.log(arrayData)
       return arrayData
     };
 
@@ -1349,5 +1355,34 @@ angular.module('topazApp')
       .attr('height', cfg.h + cfg.h / 4);
 
     svg.append('g').classed('single', 1).datum(randomDataset()).call(chart);
+
+
+    var bluemixDataValues = []
+    var bluemixDataValuesTwo = []
+    for (var i=0; i<4; i++) {
+      bluemixDataValues.push(bluemixData.tree.children[2].children[0].children[i].percentage)
+      // bluemixDataValuesTwo.push(bluemixDataTwo.tree.children[2].children[0].children[i].percentage)
+      bluemixDataValuesTwo.push(Math.random())
+    }
+    console.log(bluemixDataValues)
+    console.log(bluemixDataValuesTwo)
+
+    var numToWords = ["zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+
+    for (var i=0; i<4; i++ ) {
+      var svgNeeds = d3.select("#Kirill" + numToWords[i+2])
+        .attr('width', 250)
+        .attr('height', 250)
+
+        // svgNeeds.append('g').data([0]).append("circle").attr("cx","110px").attr("cy","110px").attr("r", bluemixDataValues[i]*110).attr("stroke", "#0091EA").attr("fill", "none").attr("stroke-width", "3px").attr("opacity", "0.7");
+        // svgNeeds.append('g').data([0]).append("circle").attr("cx","110px").attr("cy","110px").attr("r", bluemixDataValuesTwo[i]*110).attr("stroke", "#F44336").attr("fill", "none").attr("stroke-width", "3px").attr("opacity", "0.7");
+
+
+        svgNeeds.append('g').data([0]).append("circle").attr("cx","110px").attr("cy","110px").attr("r", bluemixDataValues[i]*110).attr("fill", "#0091EA").attr("opacity", "0.4");
+        svgNeeds.append('g').data([0]).append("circle").attr("cx","110px").attr("cy","110px").attr("r", bluemixDataValuesTwo[i]*110).attr("fill", "#F44336").attr("opacity", "0.4");
+
+
+    }
+
 
   });
