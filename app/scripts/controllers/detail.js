@@ -1308,13 +1308,13 @@ angular.module('topazApp')
 
     RadarChart.defaultConfig.color = function() {};
     RadarChart.defaultConfig.radius = 0;
-    RadarChart.defaultConfig.w = 450;
-    RadarChart.defaultConfig.h = 450;
-    RadarChart.defaultConfig.maxValue = 1;
-    RadarChart.defaultConfig.axisText = true;
-    RadarChart.defaultConfig.factor = 0.9;
-    RadarChart.defaultConfig.factorLegend = 1;
-    RadarChart.defaultConfig.levels = 5;
+    RadarChart.defaultConfig.w = 600;
+    RadarChart.defaultConfig.h = 600;
+    // RadarChart.defaultConfig.maxValue = 1;
+    // RadarChart.defaultConfig.axisText = true;
+    // RadarChart.defaultConfig.factor = 0.9;
+    // RadarChart.defaultConfig.factorLegend = 1;
+    // RadarChart.defaultConfig.levels = 5;
 
 
     // This part is pretty hacking. Will change it soon. 
